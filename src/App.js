@@ -7,7 +7,7 @@ const API_URL = 'http://www.omdbapi.com?apikey=c055d791';
 
 const App = () => {
 
-    const searchMovies = async (title) => {
+    const searchMovies = async (title) => {  //it takes some time to fetch movies
         const response = await fetch(`${API_URL}&s=${title}`);  //call our api
         const data = await response.json();  // get data 
         console.log(data.Search);
@@ -15,7 +15,7 @@ const App = () => {
     }
 
     useEffect(() => {
-        searchMovies('Spiderman');
+        searchMovies('Shrek');
     }, []);
 
     return (
